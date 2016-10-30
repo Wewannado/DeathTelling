@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DeathTelling</string>
+    <string-array name="yesNo">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+</resources>
