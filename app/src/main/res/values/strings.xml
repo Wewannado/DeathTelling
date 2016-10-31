@@ -1,7 +1,25 @@
 <resources>
     <string name="app_name">DeathTelling</string>
+    <string name="nombre">Nombre</string>
+    <string name="introduce_tu_nombre">Introduce tu nombre</string>
+    <string name="edad">Edad</string>
+    <string name="introduce_tu_edad">Introduce tu edad</string>
+    <string name="genero">Genero</string>
+    <string name="fumas">¿Fumas?</string>
+    <string name="bebes">¿Bebes?</string>
+    <string name="que_tal_se_te_da_el_lenguaje_klingon">¿Que tal se te da el lenguaje Klingon?</string>
+    <string name="es_mi_lengua_materna">Es mi lengua materna!</string>
+    <string name="calcula">Calcula</string>
+    <string name="si">Si</string>
+    <string name="no">No</string>
     <string-array name="yesNo">
         <item>Yes</item>
         <item>No</item>
+    </string-array>
+
+    <string-array name="genero">
+        <item>Hombre</item>
+        <item>Mujer</item>
+        <item>Otro</item>
     </string-array>
 </resources>

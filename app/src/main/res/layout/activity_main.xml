@@ -22,7 +22,7 @@
             android:layout_weight="1"
             android:layout_width="0dip"
             android:id="@+id/tViewNombreV"
-            android:text="Nombre"
+            android:text="@string/nombre"
             android:textAlignment="center"
             android:textSize="18sp" />
     </TableRow>
@@ -36,7 +36,7 @@
             android:layout_width="0dip"
             android:id="@+id/eTextNombreV"
             android:ems="10"
-            android:hint="Introduce tu nombre"
+            android:hint="@string/introduce_tu_nombre"
             android:inputType="textPersonName"
             android:textAlignment="center" />
 
@@ -50,7 +50,7 @@
             android:layout_weight="1"
             android:layout_width="0dip"
             android:id="@+id/tViewEdadV"
-            android:text="Edad"
+            android:text="@string/edad"
             android:textAlignment="center"
             android:textSize="18sp" />
     </TableRow>
@@ -63,8 +63,8 @@
             android:id="@+id/eTextEdadV"
             android:layout_width="0dip"
             android:ems="10"
-            android:hint="Introduce tu edad"
-            android:inputType="textPersonName"
+            android:hint="@string/introduce_tu_edad"
+            android:inputType="numberSigned"
             android:textAlignment="center" />
     </TableRow>
 
@@ -75,7 +75,7 @@
             android:layout_weight="0.3"
             android:id="@+id/tViewSexoV"
             android:layout_width="0dip"
-            android:text="Sexo"
+            android:text="@string/genero"
             android:textAlignment="center"
             android:textSize="18sp" />
 
@@ -83,7 +83,7 @@
             android:layout_weight="0.35"
             android:id="@+id/tViewFumasV"
             android:layout_width="0dip"
-            android:text="¿Fumas?"
+            android:text="@string/genero"
             android:textAlignment="center"
             android:textSize="18sp" />
 
@@ -91,27 +91,30 @@
             android:id="@+id/tViewBebesV"
             android:layout_weight="0.35"
             android:layout_width="0dip"
-            android:text="¿Bebes?"
+            android:text="@string/bebes"
             android:textAlignment="center"
             android:textSize="18sp" />
 
     </TableRow>
 
     <TableRow
-        android:layout_weight="0.2">
+        android:layout_weight="0.2"
+        android:weightSum="1"
+        >
 
         <Spinner
             android:layout_weight="0.3"
             android:id="@+id/spinnerSexoV"
-            android:layout_width="0dip"></Spinner>
+            android:layout_width="0dip"/>
 
         <RadioGroup
             android:layout_width="0dip"
             android:layout_weight="0.35"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <RadioButton
-                android:text="Si"
+                android:text="@string/si"
                 android:layoutDirection="rtl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -124,7 +127,7 @@
 
             <RadioButton
 
-                android:text="No"
+                android:text="@string/no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/radioButtonNV"
@@ -149,18 +152,19 @@
             android:layout_weight="0.5"
             android:layout_width="0dip"
             android:id="@+id/tViewKlingonV"
-            android:text="¿Que tal se te da el lenguaje Klingon?"
+            android:text="@string/que_tal_se_te_da_el_lenguaje_klingon"
             android:textSize="18sp"
-            android:textAlignment="textEnd" />
+            android:textAlignment="textEnd"
+            android:visibility="invisible" />
 
         <CheckBox
             android:layout_weight="0.5"
             android:layout_width="0dip"
             android:id="@+id/checkBoxKlingonV"
-            android:text="Es mi lengua materna!"
-            android:textAppearance="@android:style/TextAppearance.Material.Small"
+            android:text="@string/es_mi_lengua_materna"
             android:textColor="?android:attr/textColorTertiary"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="invisible" />
     </TableRow>
 
     <TableRow android:layout_weight="0.2">
@@ -168,7 +172,7 @@
         <Button
             android:layout_width="0dip"
             android:id="@+id/calculaV"
-            android:text="Calcula"
+            android:text="@string/calcula"
             android:layout_weight="1" />
 
     </TableRow>
