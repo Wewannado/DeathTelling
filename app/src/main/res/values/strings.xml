@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DeathTelling</string>
+    <string name="app_name" translatable="false">DeathTelling</string>
     <string name="nombre">Nombre</string>
     <string name="introduce_tu_nombre">Introduce tu nombre</string>
     <string name="edad">Edad</string>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bebes">Beus alcohol?</string>
+    <string name="calcula">Calcula</string>
+    <string name="edad">Edat</string>
+    <string name="es_mi_lengua_materna">Es la meva llengua materna!</string>
+    <string name="fumas">Fumes?</string>
+    <string name="genero">Génere</string>
+    <string name="introduce_tu_edad">Introdueix la teva edad</string>
+    <string name="introduce_tu_nombre">Introdueix el teu nom</string>
+    <string name="no">No</string>
+    <string name="nombre">Nom</string>
+    <string name="que_tal_se_te_da_el_lenguaje_klingon">Com s\'et dona el llenguatge Klingon?</string>
+    <string name="si">Si</string>
+</resources>

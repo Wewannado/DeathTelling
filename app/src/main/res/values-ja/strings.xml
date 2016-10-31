@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bebes">お酒をのみますか</string>
+    <string name="calcula">計算する</string>
+    <string name="edad">何歳</string>
+    <string name="es_mi_lengua_materna">国語ですよ！</string>
+    <string name="fumas">すいますか</string>
+    <string name="genero">性別</string>
+    <string name="introduce_tu_edad">何才ですか</string>
+    <string name="introduce_tu_nombre">お名前は?</string>
+    <string name="no">いええ</string>
+    <string name="nombre">名前</string>
+    <string name="que_tal_se_te_da_el_lenguaje_klingon">Klingonを話せますか</string>
+    <string name="si">はい</string>
+</resources>
