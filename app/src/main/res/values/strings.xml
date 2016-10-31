@@ -30,4 +30,40 @@
         <item>Mujer</item>
         <item>Otro</item>
     </string-array>
+
+
+    <!-- String code structure
+first letter->for now, always a capital "C"
+First digit [0-1]-> Sabe hablar Klingon.
+Second digit [0-2] -> Genero. Note that if the above is 1, this only can be 2.
+Third digit [0-1] -> Smoke
+Four digit [0-1] -> Drinks
+
+The above showns a total posible results of
+-->
+
+    //Hombres
+    <string name="C0000">Muerte por sobredosis</string>
+    <string name="C0001">Muerte por sobredosis</string>
+    <string name="C0010">Muerte por sobredosis</string>
+    <string name="C0011">Muerte por sobredosis</string>
+
+    //Mujeres
+    <string name="C0100">Muerte por sobredosis</string>
+    <string name="C0101">Muerte por sobredosis</string>
+    <string name="C0110">Muerte por sobredosis</string>
+    <string name="C0111">Muerte por sobredosis</string>
+
+
+    //Otros
+    <string name="C0200">Muerte por sobredosis</string>
+    <string name="C0201">Muerte por sobredosis</string>
+    <string name="C0210">Muerte por sobredosis</string>
+    <string name="C0211">Muerte por sobredosis</string>
+
+    //Estas muertes estan escritas en Klingoniano, no deben de ser traducidas.
+    <string name="C1200" translatable="false">en batalla interstelar cumpliendo su deber.</string>
+    <string name="C1201" translatable="false">en batalla interstelar por chocar con un asteroide despues de una noche de fiesta</string>
+    <string name="C1210" translatable="false">por un incendio en la nave causado por quedarse dormido en la cama mientras fumaba</string>
+    <string name="C1211" translatable="false">asesinado por su mejor amigo por gastarse el dinero destinado a los sueldos de la tripulación en alcohol y tabaco.</string>
 </resources>

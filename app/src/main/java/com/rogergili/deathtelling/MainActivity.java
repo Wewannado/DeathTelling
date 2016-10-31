@@ -9,6 +9,7 @@
 package com.rogergili.deathtelling;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
@@ -17,6 +18,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.Spinner;
@@ -24,7 +26,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener{
     private int selectedSpinnerBebes = 0;
     private int selectedSpinnerSexo = 0;
     private int selectedRadioButton = 0;
@@ -73,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Spinner bebes;
         RadioButton RBn;
         RadioButton RBy;
+        Button calcula;
 
         //inicialitzem els identificadors de recursos adecuats a la orientacio de la pantalla.
         if (orientacio == "vertical") {
@@ -80,15 +83,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             bebes = (Spinner) findViewById(R.id.spinnerBebesV);
             RBn = (RadioButton) findViewById(R.id.radioButtonNV);
             RBy = (RadioButton) findViewById(R.id.radioButtonYV);
+            calcula = (Button) findViewById(R.id.calculaV);
         } else {
             sexo = (Spinner) findViewById(R.id.spinnerSexoH);
             bebes = (Spinner) findViewById(R.id.spinnerBebesH);
             RBn = (RadioButton) findViewById(R.id.radioButtonNH);
             RBy = (RadioButton) findViewById(R.id.radioButtonYH);
+            calcula = (Button) findViewById(R.id.calculaH);
         }
-        //Creem els listeners als dos Spinners
+
+        //Creem els listeners als dos Spinners i al boto de calcular.
         sexo.setOnItemSelectedListener(this);
         bebes.setOnItemSelectedListener(this);
+        calcula.setOnClickListener(this);
 
         //Creem un adaptador per als Spinners.
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.yesNo, R.layout.spinner_right);
@@ -111,7 +118,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         //Seleccionem la posicio adequada al spinner de beguda
         bebes.setSelection(selectedSpinnerBebes);
-
         //Seleccionem la opcio corresponent al radioButton
         if (this.selectedRadioButton == 0) {
             RBn.setChecked(true);
@@ -131,6 +137,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
             checkKlingon.setChecked(true);
         }
+
+
     }
 
 
@@ -214,5 +222,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        if ((view.getId()== R.id.calculaH) || (view.getId()== R.id.calculaV)) {
+            Intent intent = new Intent(MainActivity.this, MostrarMort.class);
+            startActivity(intent);
+        }
     }
 }
