@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <!--
+  ~ Created by Roger G. Coscojuela on 31/10/16 2:55
+  ~ Copyright (c) 2016.. All rights reserved.
+  ~
+  ~ Background images courtesy of MysticArtDesign
+  ~ https://pixabay.com/es/users/Mysticsartdesign-322497/
+  -->
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/activity_main"
         tools:context="com.rogergili.deathtelling.MainActivity"
@@ -11,7 +19,8 @@
         android:shrinkColumns="0"
         android:stretchColumns="*"
         android:weightSum="1.6"
-    android:background="@color/colorBackGround"
+        android:background="@drawable/background"
+        android:scaleType="fitEnd"
         >
 
 
