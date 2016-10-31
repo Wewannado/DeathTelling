@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="bebes">Do you drink alcohol?</string>
+    <string name="bebes">Alcohol?</string>
     <string name="calcula">Calculate</string>
     <string name="edad">Age</string>
     <string name="es_mi_lengua_materna">It\'s my mother tongue!</string>
-    <string name="fumas">Do you smoke?</string>
+    <string name="fumas">Smoke?</string>
     <string name="genero">Gender</string>
     <string name="introduce_tu_edad">Your age</string>
     <string name="introduce_tu_nombre">Your name</string>
@@ -12,4 +12,15 @@
     <string name="nombre">Name</string>
     <string name="que_tal_se_te_da_el_lenguaje_klingon">Do you speak the Klingon language?</string>
     <string name="si">Yes</string>
+
+    <string-array name="yesNo">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="genero">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
 </resources>

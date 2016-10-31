@@ -8,6 +8,7 @@
     android:shrinkColumns="0"
     android:stretchColumns="*"
     android:weightSum="1.2"
+    android:background="@color/colorBackGround"
     >
 
     <TableRow android:layout_weight="0.2"
@@ -135,7 +136,7 @@
             android:layout_weight="0.5"
             android:layout_width="0dip"
             android:id="@+id/tViewKlingonH"
-            android:text="¿Que tal se te da el lenguaje Klingon?"
+            android:text="@string/que_tal_se_te_da_el_lenguaje_klingon"
             android:textSize="18sp"
             android:textAlignment="textEnd" />
 
@@ -143,8 +144,7 @@
             android:layout_weight="0.5"
             android:layout_width="0dip"
             android:id="@+id/checkBoxKlingonH"
-            android:text="Es mi lengua materna!"
-            android:textAppearance="@android:style/TextAppearance.Material.Small"
+            android:text="@string/es_mi_lengua_materna"
             android:textColor="?android:attr/textColorTertiary"
             android:textSize="18sp" />
     </TableRow>

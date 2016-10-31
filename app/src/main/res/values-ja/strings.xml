@@ -12,4 +12,15 @@
     <string name="nombre">名前</string>
     <string name="que_tal_se_te_da_el_lenguaje_klingon">Klingonを話せますか</string>
     <string name="si">はい</string>
+
+    <string-array name="yesNo">
+        <item>はい</item>
+        <item>いええ</item>
+    </string-array>
+
+    <string-array name="genero">
+        <item>男</item>
+        <item>女</item>
+        <item>Other</item>
+    </string-array>
 </resources>

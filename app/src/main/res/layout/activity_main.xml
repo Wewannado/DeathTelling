@@ -5,12 +5,13 @@
         tools:context="com.rogergili.deathtelling.MainActivity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         android:paddingTop="30dp"
         android:shrinkColumns="0"
         android:stretchColumns="*"
         android:weightSum="1.6"
+    android:background="@color/colorBackGround"
         >
 
 
@@ -69,10 +70,11 @@
     </TableRow>
 
     <TableRow
-        android:layout_weight="0.2">
+        android:layout_weight="0.2"
+        android:weightSum="1">
 
         <TextView
-            android:layout_weight="0.3"
+            android:layout_weight="0.35"
             android:id="@+id/tViewSexoV"
             android:layout_width="0dip"
             android:text="@string/genero"
@@ -83,13 +85,13 @@
             android:layout_weight="0.35"
             android:id="@+id/tViewFumasV"
             android:layout_width="0dip"
-            android:text="@string/genero"
+            android:text="@string/fumas"
             android:textAlignment="center"
             android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tViewBebesV"
-            android:layout_weight="0.35"
+            android:layout_weight="0.30"
             android:layout_width="0dip"
             android:text="@string/bebes"
             android:textAlignment="center"
@@ -103,7 +105,7 @@
         >
 
         <Spinner
-            android:layout_weight="0.3"
+            android:layout_weight="0.35"
             android:id="@+id/spinnerSexoV"
             android:layout_width="0dip"/>
 
@@ -139,14 +141,15 @@
         </RadioGroup>
 
         <Spinner
-            android:layout_weight="0.35"
+            android:layout_weight="0.30"
             android:id="@+id/spinnerBebesV"
             android:layout_width="0dip"/>
 
     </TableRow>
 
     <TableRow
-        android:layout_weight="0.2">
+        android:layout_weight="0.2"
+        android:weightSum="1">
 
         <TextView
             android:layout_weight="0.5"

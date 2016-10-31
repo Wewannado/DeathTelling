@@ -12,4 +12,15 @@
     <string name="nombre">Nom</string>
     <string name="que_tal_se_te_da_el_lenguaje_klingon">Com s\'et dona el llenguatge Klingon?</string>
     <string name="si">Si</string>
+
+    <string-array name="yesNo">
+        <item>Si</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="genero">
+        <item>Home</item>
+        <item>Dona</item>
+        <item>Altre</item>
+    </string-array>
 </resources>
