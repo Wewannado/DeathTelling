@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             this.selectedRadioButton = savedInstanceState.getInt("fumas");
             this.anys = savedInstanceState.getInt("edad");
             this.nom = savedInstanceState.getString("nom");
+            this.selectedKlingon= savedInstanceState.getInt("klingon");
         } else {
             //Missatge per invitar a trobar un dels ous de pasqua del programa ;)
             Toast.makeText(this, R.string.aliens, Toast.LENGTH_SHORT).show();
@@ -83,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             eTnom = (EditText) findViewById(R.id.eTextNombreV);
         }
 
+        outState.putInt("klingon", this.selectedKlingon);
         outState.putInt("sexo", this.selectedSpinnerSexo);
         outState.putInt("bebes", this.selectedSpinnerBebes);
         outState.putInt("fumas", this.selectedRadioButton);
