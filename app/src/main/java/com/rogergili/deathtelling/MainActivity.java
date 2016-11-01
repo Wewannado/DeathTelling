@@ -170,6 +170,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //Marquem la checkbox del llenguatge klingon en cas que sigui necesari
         if (selectedKlingon == 1) {
             checkKlingon.setChecked(true);
+        }else{
+            checkKlingon.setChecked(false);
         }
 
         //Inicialitzem el text adecuat als EditText.
@@ -199,6 +201,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             textKlingon.setVisibility(View.INVISIBLE);
             checkKlingon.setChecked(false);
             checkKlingon.setVisibility(View.INVISIBLE);
+            selectedKlingon= 0;
         }
     }
 
