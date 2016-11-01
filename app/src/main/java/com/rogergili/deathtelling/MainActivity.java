@@ -30,13 +30,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     private int selectedSpinnerBebes = 0;
     private int selectedSpinnerSexo = 0;
     private int selectedRadioButton = 0;
     private int selectedKlingon = 0;
-    private int anys=0;
-    private String nom="";
+    private int anys = 0;
+    private String nom = "";
 
     private String orientacio;
 
@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             this.selectedSpinnerSexo = savedInstanceState.getInt("sexo");
             this.selectedSpinnerBebes = savedInstanceState.getInt("bebes");
             this.selectedRadioButton = savedInstanceState.getInt("fumas");
-            this.anys= savedInstanceState.getInt("edad");
-            this.nom= savedInstanceState.getString("nom");
+            this.anys = savedInstanceState.getInt("edad");
+            this.nom = savedInstanceState.getString("nom");
         } else {
             //Missatge per invitar a trobar un dels ous de pasqua del programa ;)
             Toast.makeText(this, R.string.aliens, Toast.LENGTH_SHORT).show();
@@ -75,12 +75,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //Introduim les dades que volem guardar en cas que es giri la pantalla.
         EditText eTedad;
         EditText eTnom;
-        if(orientacio=="horitzontal"){
-            eTedad= (EditText) findViewById(R.id.eTextEdadH);
-            eTnom= (EditText) findViewById(R.id.eTextNombreH);
-        }else{
-           eTedad= (EditText) findViewById(R.id.eTextEdadV);
-           eTnom= (EditText) findViewById(R.id.eTextNombreV);
+        if (orientacio == "horitzontal") {
+            eTedad = (EditText) findViewById(R.id.eTextEdadH);
+            eTnom = (EditText) findViewById(R.id.eTextNombreH);
+        } else {
+            eTedad = (EditText) findViewById(R.id.eTextEdadV);
+            eTnom = (EditText) findViewById(R.id.eTextNombreV);
         }
 
         outState.putInt("sexo", this.selectedSpinnerSexo);
@@ -89,19 +89,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         outState.putString("nom", eTnom.getText().toString());
         try {
             outState.putInt("edad", Integer.parseInt(eTedad.getText().toString()));
-        }catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
 
         }
-
-        outState.putString( "nom", eTnom.getText().toString());
-
     }
 
     public void cargaPantalla(String orientacio) {
         Spinner sexo;
         Spinner bebes;
-        RadioButton RBn;
-        RadioButton RBy;
+        RadioButton botoRadioButtonNo;
+        RadioButton botoRadioButtonSi;
         Button calcula;
         EditText eTedad;
         EditText eTnom;
@@ -110,19 +107,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if (orientacio == "vertical") {
             sexo = (Spinner) findViewById(R.id.spinnerSexoV);
             bebes = (Spinner) findViewById(R.id.spinnerBebesV);
-            RBn = (RadioButton) findViewById(R.id.radioButtonNV);
-            RBy = (RadioButton) findViewById(R.id.radioButtonYV);
+            botoRadioButtonNo = (RadioButton) findViewById(R.id.radioButtonNV);
+            botoRadioButtonSi = (RadioButton) findViewById(R.id.radioButtonYV);
             calcula = (Button) findViewById(R.id.calculaV);
-            eTedad= (EditText) findViewById(R.id.eTextEdadV);
-            eTnom= (EditText) findViewById(R.id.eTextNombreV);
+            eTedad = (EditText) findViewById(R.id.eTextEdadV);
+            eTnom = (EditText) findViewById(R.id.eTextNombreV);
         } else {
             sexo = (Spinner) findViewById(R.id.spinnerSexoH);
             bebes = (Spinner) findViewById(R.id.spinnerBebesH);
-            RBn = (RadioButton) findViewById(R.id.radioButtonNH);
-            RBy = (RadioButton) findViewById(R.id.radioButtonYH);
+            botoRadioButtonNo = (RadioButton) findViewById(R.id.radioButtonNH);
+            botoRadioButtonSi = (RadioButton) findViewById(R.id.radioButtonYH);
             calcula = (Button) findViewById(R.id.calculaH);
-            eTedad= (EditText) findViewById(R.id.eTextEdadH);
-            eTnom= (EditText) findViewById(R.id.eTextNombreH);
+            eTedad = (EditText) findViewById(R.id.eTextEdadH);
+            eTnom = (EditText) findViewById(R.id.eTextNombreH);
         }
 
         //Creem els listeners als dos Spinners i al boto de calcular.
@@ -153,11 +150,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         bebes.setSelection(selectedSpinnerBebes);
         //Seleccionem la opcio corresponent al radioButton
         if (this.selectedRadioButton == 0) {
-            RBn.setChecked(true);
-            RBy.setChecked(false);
+            botoRadioButtonNo.setChecked(true);
+            botoRadioButtonSi.setChecked(false);
         } else {
-            RBn.setChecked(false);
-            RBy.setChecked(true);
+            botoRadioButtonNo.setChecked(false);
+            botoRadioButtonSi.setChecked(true);
         }
         CheckBox checkKlingon;
         if (orientacio == "horitzontal") {
@@ -165,6 +162,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         } else {
             checkKlingon = (CheckBox) findViewById(R.id.checkBoxKlingonV);
         }
+        //Afegim un listener al chekcbox.
         checkKlingon.setOnClickListener(this);
 
         //Marquem la checkbox del llenguatge klingon en cas que sigui necesari
@@ -175,8 +173,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //Inicialitzem el text adecuat als EditText.
 
         eTnom.setText(nom);
-        if(anys!=0){
-        eTedad.setText(String.valueOf(anys));}
+        if (anys != 0) {
+            eTedad.setText(String.valueOf(anys));
+        }
 
     }
 
@@ -265,20 +264,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onClick(View view) {
-        if ((view.getId()== R.id.calculaH) || (view.getId()== R.id.calculaV)) {
+        if ((view.getId() == R.id.calculaH) || (view.getId() == R.id.calculaV)) {
             EditText eTedad;
             EditText eTnom;
-            if(orientacio=="horitzontal"){
-                eTedad= (EditText) findViewById(R.id.eTextEdadH);
-                eTnom= (EditText) findViewById(R.id.eTextNombreH);
-            }else{
-                eTedad= (EditText) findViewById(R.id.eTextEdadV);
-                eTnom= (EditText) findViewById(R.id.eTextNombreV);
+            if (orientacio == "horitzontal") {
+                eTedad = (EditText) findViewById(R.id.eTextEdadH);
+                eTnom = (EditText) findViewById(R.id.eTextNombreH);
+            } else {
+                eTedad = (EditText) findViewById(R.id.eTextEdadV);
+                eTnom = (EditText) findViewById(R.id.eTextNombreV);
             }
-            if(eTnom.getText().toString().equals("")){
+            if (eTnom.getText().toString().equals("")) {
                 Toast.makeText(this, R.string.sinNombre, Toast.LENGTH_SHORT).show();
-            }
-            else {
+            } else {
                 Intent intent = new Intent(MainActivity.this, MostrarMort.class);
                 intent.putExtra("klingon", selectedKlingon);
                 intent.putExtra("genero", selectedSpinnerSexo);
@@ -290,17 +288,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         }
 
-        if((view.getId()== R.id.checkBoxKlingonH) || (view.getId()== R.id.checkBoxKlingonV)){
+        if ((view.getId() == R.id.checkBoxKlingonH) || (view.getId() == R.id.checkBoxKlingonV)) {
             CheckBox klingon;
-            if(orientacio=="horitzontal"){
+            if (orientacio == "horitzontal") {
                 klingon = (CheckBox) findViewById(R.id.checkBoxKlingonH);
-            }else{
+            } else {
                 klingon = (CheckBox) findViewById(R.id.checkBoxKlingonV);
             }
-            if(klingon.isChecked()){
-                this.selectedKlingon=1;
-            }else{
-                this.selectedKlingon=0;
+            if (klingon.isChecked()) {
+                this.selectedKlingon = 1;
+            } else {
+                this.selectedKlingon = 0;
             }
         }
     }
