@@ -1,9 +1,12 @@
-<!--
-  ~ Created by Roger G. Coscojuela on 31/10/16 2:55
+﻿<!--
+  ~ Created by Roger G. Coscojuela on 1/11/16 4:22
   ~ Copyright (c) 2016.. All rights reserved.
   ~
-  ~ Background images courtesy of MysticArtDesign
+  ~ Background images courtesy of MysticArtDesign:
   ~ https://pixabay.com/es/users/Mysticsartdesign-322497/
+  ~
+  ~ Klingon translations thanks to:
+  ~ http://tradukka.com/translate/en/tlh?hl=ca
   -->
 
 <resources>
@@ -20,6 +23,8 @@
     <string name="calcula">Calcula</string>
     <string name="si">Si</string>
     <string name="no">No</string>
+    <string name="sinNombre">No se puede calcular la muerte de un sin nombre</string>
+    <string name="aliens">Los aliens no existen…¿Verdad?</string>
     <string-array name="yesNo">
         <item>Yes</item>
         <item>No</item>
@@ -43,27 +48,31 @@ The above showns a total posible results of
 -->
 
     //Hombres
-    <string name="C0000">Muerte por sobredosis</string>
-    <string name="C0001">Muerte por sobredosis</string>
-    <string name="C0010">Muerte por sobredosis</string>
-    <string name="C0011">Muerte por sobredosis</string>
+    <string name="C0000">morirá solo en la única habitación del apartamento que tenia alquilado.</string>
+    <string name="C0001">morirá después de una larga agonía debido a la cirrosis desarrollada por beber en exceso.</string>
+    <string name="C0010">morirá por la explosión causada al encender un cigarrillo, tras dejarse mal apagado un fogón de la cocina.</string>
+    <string name="C0011">morirá de viejo, para asombro de todos sus conocidos.</string>
 
     //Mujeres
-    <string name="C0100">Muerte por sobredosis</string>
-    <string name="C0101">Muerte por sobredosis</string>
-    <string name="C0110">Muerte por sobredosis</string>
-    <string name="C0111">Muerte por sobredosis</string>
+    <string name="C0100">morirá asesinada por un atracador, mientras volvía del trabajo.</string>
+    <string name="C0101">morirá después de intentar conseguir un nuevo récord olímpico, de beber 10 litros de cerveza en 5 minutos.</string>
+    <string name="C0110">morirá de cáncer de pulmón. No dirás que el medico no te lo advirtió.</string>
+    <string name="C0111">morirá al caer por el balcón de su apartamento, al que había salido para fumar.</string>
 
 
     //Otros
-    <string name="C0200">Muerte por sobredosis</string>
-    <string name="C0201">Muerte por sobredosis</string>
-    <string name="C0210">Muerte por sobredosis</string>
-    <string name="C0211">Muerte por sobredosis</string>
+    <string name="C0200">morirá del disparo de un agente del gobierno, encargado de exterminar razas alienígenas de la faz de la tierra.</string>
+    <string name="C0201">morirá tras una terrible reacción alérgica causada por el licor de plátano.</string>
+    <string name="C0210">morirá al confundir perejil con tabaco de liar.</string>
+    <string name="C0211">morirá en su cama, borracho, con un cigarrillo en la boca y una sonrisa de oreja a oreja.</string>
 
-    //Estas muertes estan escritas en Klingoniano, no deben de ser traducidas.
-    <string name="C1200" translatable="false">en batalla interstelar cumpliendo su deber.</string>
-    <string name="C1201" translatable="false">en batalla interstelar por chocar con un asteroide despues de una noche de fiesta</string>
-    <string name="C1210" translatable="false">por un incendio en la nave causado por quedarse dormido en la cama mientras fumaba</string>
-    <string name="C1211" translatable="false">asesinado por su mejor amigo por gastarse el dinero destinado a los sueldos de la tripulación en alcohol y tabaco.</string>
+    //Estas muertes están escritas en Klingoniano, no deben de ser traducidas.
+    //Traducciones cortesía de http://tradukka.com/translate/en/tlh?hl=ca
+
+    <string name="C1200" translatable="false">Hegh may\'Daq vI\'omchugh Qu\'Daj ta\'.</string>  //morirá en batalla interestelar cumpliendo su deber.
+    <string name="C1201" translatable="false">batlh may\'Daq HeghDI\' vI\'omchugh pong ngeQ ghopDap qaSpu\'DI\' ram ghom.</string>//morirá en batalla interestelar por chocar con un asteroide después de una noche de fiesta.
+    <string name="C1210" translatable="false">Hegh \'oH pong qul DujDaq luH mIwmo\' QongDI\' QongDaqDaq poStaHvIS tlhIch ghaH.</string>//morirá por un incendio en la nave causado por quedarse dormido en la cama mientras fumaba.
+    <string name="C1211" translatable="false">Hegh chot nIvbogh jupwI\' Huch earmarked alcohol \'ej tobacco beq salaries \'arghbej.</string>
+    <string name="resource_not_found">Error interno. Recurso no encontrado</string>//morirá asesinado por su mejor amigo por gastarse el dinero destinado a los sueldos de la tripulación en alcohol y tabaco.
+
 </resources>

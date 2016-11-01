@@ -1,9 +1,12 @@
 /*
- * Created by Roger G. Coscojuela on 31/10/16 2:55
+ * Created by Roger G. Coscojuela on 1/11/16 3:40
  * Copyright (c) 2016.. All rights reserved.
  *
- * Background images courtesy of MysticArtDesign
+ * Background images courtesy of MysticArtDesign:
  * https://pixabay.com/es/users/Mysticsartdesign-322497/
+ *
+ * Klingon translations thanks to:
+ * http://tradukka.com/translate/en/tlh?hl=ca
  */
 
 package com.rogergili.deathtelling;
@@ -20,6 +23,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -31,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private int selectedSpinnerSexo = 0;
     private int selectedRadioButton = 0;
     private int selectedKlingon = 0;
+    private int anys=0;
+    private String nom="";
 
     private String orientacio;
 
@@ -46,9 +52,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             this.selectedSpinnerSexo = savedInstanceState.getInt("sexo");
             this.selectedSpinnerBebes = savedInstanceState.getInt("bebes");
             this.selectedRadioButton = savedInstanceState.getInt("fumas");
+            this.anys= savedInstanceState.getInt("edad");
+            this.nom= savedInstanceState.getString("nom");
         } else {
             //Missatge per invitar a trobar un dels ous de pasqua del programa ;)
-            Toast.makeText(this, "Los aliens no existen...¿Verdad?", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.aliens, Toast.LENGTH_SHORT).show();
         }
         //Carreguem el metode cargaPantalla en vertical o horitzontal depenen de la orientacio de la pantalla.
         if (display.getRotation() == Surface.ROTATION_0 || display.getRotation() == Surface.ROTATION_180) {
@@ -65,9 +73,28 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         //Introduim les dades que volem guardar en cas que es giri la pantalla.
+        EditText eTedad;
+        EditText eTnom;
+        if(orientacio=="horitzontal"){
+            eTedad= (EditText) findViewById(R.id.eTextEdadH);
+            eTnom= (EditText) findViewById(R.id.eTextNombreH);
+        }else{
+           eTedad= (EditText) findViewById(R.id.eTextEdadV);
+           eTnom= (EditText) findViewById(R.id.eTextNombreV);
+        }
+
         outState.putInt("sexo", this.selectedSpinnerSexo);
         outState.putInt("bebes", this.selectedSpinnerBebes);
         outState.putInt("fumas", this.selectedRadioButton);
+        outState.putString("nom", eTnom.getText().toString());
+        try {
+            outState.putInt("edad", Integer.parseInt(eTedad.getText().toString()));
+        }catch (NumberFormatException e){
+
+        }
+
+        outState.putString( "nom", eTnom.getText().toString());
+
     }
 
     public void cargaPantalla(String orientacio) {
@@ -76,6 +103,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         RadioButton RBn;
         RadioButton RBy;
         Button calcula;
+        EditText eTedad;
+        EditText eTnom;
 
         //inicialitzem els identificadors de recursos adecuats a la orientacio de la pantalla.
         if (orientacio == "vertical") {
@@ -84,12 +113,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             RBn = (RadioButton) findViewById(R.id.radioButtonNV);
             RBy = (RadioButton) findViewById(R.id.radioButtonYV);
             calcula = (Button) findViewById(R.id.calculaV);
+            eTedad= (EditText) findViewById(R.id.eTextEdadV);
+            eTnom= (EditText) findViewById(R.id.eTextNombreV);
         } else {
             sexo = (Spinner) findViewById(R.id.spinnerSexoH);
             bebes = (Spinner) findViewById(R.id.spinnerBebesH);
             RBn = (RadioButton) findViewById(R.id.radioButtonNH);
             RBy = (RadioButton) findViewById(R.id.radioButtonYH);
             calcula = (Button) findViewById(R.id.calculaH);
+            eTedad= (EditText) findViewById(R.id.eTextEdadH);
+            eTnom= (EditText) findViewById(R.id.eTextNombreH);
         }
 
         //Creem els listeners als dos Spinners i al boto de calcular.
@@ -126,18 +159,24 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             RBn.setChecked(false);
             RBy.setChecked(true);
         }
+        CheckBox checkKlingon;
+        if (orientacio == "horitzontal") {
+            checkKlingon = (CheckBox) findViewById(R.id.checkBoxKlingonH);
+        } else {
+            checkKlingon = (CheckBox) findViewById(R.id.checkBoxKlingonV);
+        }
+        checkKlingon.setOnClickListener(this);
 
         //Marquem la checkbox del llenguatge klingon en cas que sigui necesari
         if (selectedKlingon == 1) {
-            CheckBox checkKlingon;
-            if (orientacio == "horitzontal") {
-                checkKlingon = (CheckBox) findViewById(R.id.checkBoxKlingonH);
-            } else {
-                checkKlingon = (CheckBox) findViewById(R.id.checkBoxKlingonV);
-            }
             checkKlingon.setChecked(true);
         }
 
+        //Inicialitzem el text adecuat als EditText.
+
+        eTnom.setText(nom);
+        if(anys!=0){
+        eTedad.setText(String.valueOf(anys));}
 
     }
 
@@ -227,8 +266,42 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onClick(View view) {
         if ((view.getId()== R.id.calculaH) || (view.getId()== R.id.calculaV)) {
-            Intent intent = new Intent(MainActivity.this, MostrarMort.class);
-            startActivity(intent);
+            EditText eTedad;
+            EditText eTnom;
+            if(orientacio=="horitzontal"){
+                eTedad= (EditText) findViewById(R.id.eTextEdadH);
+                eTnom= (EditText) findViewById(R.id.eTextNombreH);
+            }else{
+                eTedad= (EditText) findViewById(R.id.eTextEdadV);
+                eTnom= (EditText) findViewById(R.id.eTextNombreV);
+            }
+            if(eTnom.getText().toString().equals("")){
+                Toast.makeText(this, R.string.sinNombre, Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Intent intent = new Intent(MainActivity.this, MostrarMort.class);
+                intent.putExtra("klingon", selectedKlingon);
+                intent.putExtra("genero", selectedSpinnerSexo);
+                intent.putExtra("fumas", selectedRadioButton);
+                intent.putExtra("bebe", selectedSpinnerBebes);
+                intent.putExtra("nom", eTnom.getText().toString());
+                intent.putExtra("edad", eTedad.getText().toString());
+                startActivity(intent);
+            }
+        }
+
+        if((view.getId()== R.id.checkBoxKlingonH) || (view.getId()== R.id.checkBoxKlingonV)){
+            CheckBox klingon;
+            if(orientacio=="horitzontal"){
+                klingon = (CheckBox) findViewById(R.id.checkBoxKlingonH);
+            }else{
+                klingon = (CheckBox) findViewById(R.id.checkBoxKlingonV);
+            }
+            if(klingon.isChecked()){
+                this.selectedKlingon=1;
+            }else{
+                this.selectedKlingon=0;
+            }
         }
     }
 }

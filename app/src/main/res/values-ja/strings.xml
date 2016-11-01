@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Created by Roger G. Coscojuela on 31/10/16 2:55
+  ~ Created by Roger G. Coscojuela on 1/11/16 4:22
   ~ Copyright (c) 2016.. All rights reserved.
   ~
-  ~ Background images courtesy of MysticArtDesign
+  ~ Background images courtesy of MysticArtDesign:
   ~ https://pixabay.com/es/users/Mysticsartdesign-322497/
+  ~
+  ~ Klingon translations thanks to:
+  ~ http://tradukka.com/translate/en/tlh?hl=ca
   -->
 
 <resources>
@@ -31,4 +34,18 @@
         <item>女</item>
         <item>Other</item>
     </string-array>
+    <string name="C0000">ご免なさい！私の日本語はまだよくない。日本語でDeathTellingを変換する助けてください. 私の電子メールはDeathtelling@blusoft.net</string>
+    <string name="C0001">ご免なさい！私の日本語はまだよくない。日本語でDeathTellingを変換する助けてください. 私の電子メールはDeathtelling@blusoft.net</string>
+    <string name="C0010">ご免なさい！私の日本語はまだよくない。日本語でDeathTellingを変換する助けてください. 私の電子メールはDeathtelling@blusoft.net</string>
+    <string name="C0011">ご免なさい！私の日本語はまだよくない。日本語でDeathTellingを変換する助けてください. 私の電子メールはDeathtelling@blusoft.net</string>
+    <string name="C0100">ご免なさい！私の日本語はまだよくない。日本語でDeathTellingを変換する助けてください. 私の電子メールはDeathtelling@blusoft.net</string>
+    <string name="C0101">ご免なさい！私の日本語はまだよくない。日本語でDeathTellingを変換する助けてください. 私の電子メールはDeathtelling@blusoft.net</string>
+    <string name="C0110">ご免なさい！私の日本語はまだよくない。日本語でDeathTellingを変換する助けてください. 私の電子メールはDeathtelling@blusoft.net</string>
+    <string name="C0111">ご免なさい！私の日本語はまだよくない。日本語でDeathTellingを変換する助けてください. 私の電子メールはDeathtelling@blusoft.net</string>
+    <string name="C0200">ご免なさい！私の日本語はまだよくない。日本語でDeathTellingを変換する助けてください. 私の電子メールはDeathtelling@blusoft.net</string>
+    <string name="C0201">ご免なさい！私の日本語はまだよくない。日本語でDeathTellingを変換する助けてください. 私の電子メールはDeathtelling@blusoft.net</string>
+    <string name="C0210">ご免なさい！私の日本語はまだよくない。日本語でDeathTellingを変換する助けてください. 私の電子メールはDeathtelling@blusoft.net</string>
+    <string name="C0211">ご免なさい！私の日本語はまだよくない。日本語でDeathTellingを変換する助けてください. 私の電子メールはDeathtelling@blusoft.net</string>
+    <string name="aliens">ご免なさい！私の日本語はまだよくない。日本語でDeathTellingを変換する助けてください. 私の電子メールはDeathtelling@blusoft.net</string>
+    <string name="sinNombre">ご免なさい！私の日本語はまだよくない。日本語でDeathTellingを変換する助けてください. 私の電子メールはDeathtelling@blusoft.net</string>
 </resources>

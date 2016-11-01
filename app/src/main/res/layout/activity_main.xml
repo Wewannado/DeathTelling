@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
     <!--
-  ~ Created by Roger G. Coscojuela on 31/10/16 2:55
+  ~ Created by Roger G. Coscojuela on 1/11/16 3:40
   ~ Copyright (c) 2016.. All rights reserved.
   ~
-  ~ Background images courtesy of MysticArtDesign
+  ~ Background images courtesy of MysticArtDesign:
   ~ https://pixabay.com/es/users/Mysticsartdesign-322497/
+  ~
+  ~ Klingon translations thanks to:
+  ~ http://tradukka.com/translate/en/tlh?hl=ca
   -->
 
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -116,11 +119,11 @@
         <Spinner
             android:id="@+id/spinnerSexoV"
             android:layout_width="0dip"
-            android:layout_weight="0.35"/>
+            android:layout_weight="0.30"/>
 
         <RadioGroup
             android:layout_width="0dip"
-            android:layout_weight="0.35"
+            android:layout_weight="0.4"
             android:orientation="horizontal"
             >
 
@@ -152,7 +155,7 @@
         <Spinner
             android:id="@+id/spinnerBebesV"
             android:layout_width="0dip"
-            android:layout_weight="0.30"/>
+            android:layout_weight="0.25"/>
 
     </TableRow>
 

@@ -1,20 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Created by Roger G. Coscojuela on 31/10/16 2:55
+  ~ Created by Roger G. Coscojuela on 1/11/16 4:22
   ~ Copyright (c) 2016.. All rights reserved.
   ~
-  ~ Background images courtesy of MysticArtDesign
+  ~ Background images courtesy of MysticArtDesign:
   ~ https://pixabay.com/es/users/Mysticsartdesign-322497/
+  ~
+  ~ Klingon translations thanks to:
+  ~ http://tradukka.com/translate/en/tlh?hl=ca
   -->
 
 <resources>
     <string name="bebes">Beus alcohol?</string>
     <string name="calcula">Calcula</string>
     <string name="edad">Edat</string>
-    <string name="es_mi_lengua_materna">Es la meva llengua materna!</string>
+    <string name="es_mi_lengua_materna">És la meva llengua materna!</string>
     <string name="fumas">Fumes?</string>
-    <string name="genero">Génere</string>
-    <string name="introduce_tu_edad">Introdueix la teva edad</string>
+    <string name="genero">Gènere</string>
+    <string name="introduce_tu_edad">Introdueix la teva edat</string>
     <string name="introduce_tu_nombre">Introdueix el teu nom</string>
     <string name="no">No</string>
     <string name="nombre">Nom</string>
@@ -31,5 +34,20 @@
         <item>Dona</item>
         <item>Altre</item>
     </string-array>
+    <string name="aliens">Els aliens no existeixen.... ¿no?</string>
+    <string name="C0211">morirà al seu llit, embriagat, amb una cigarreta a la boca i un somriure d\'orella a orella.</string>
+    <string name="C0000">morirà sol en la única habitació de l\'apartament que tenia llogat</string>
+    <string name="C0001">morirà després d\'una llarga agonia degut a la cirrosis desenvolupada per l\'excés d\'alcohol.</string>
+    <string name="C0010">morirà en una explosió causada al encendre una cigarreta, després de deixar un fogó de la cuina mal tancat.</string>
+    <string name="C0011">morirà de vell, amb la sorpresa de tots els seus coneguts.</string>
+    <string name="C0100">morirà assassinada per un atracador, mentres tornava del treball.</string>
+    <string name="C0101">morirà després d\'intentar aconseguir un nou record olímpic, consistent en beure 10 litres de cervesa en 5 minuts.</string>
+    <string name="C0110">morirà de càncer de pulmó. No podràs dir que el metge no t\'ho havia advertit.</string>
+    <string name="C0111">morirà al caure del balcó del seu apartament, en el que havia sortit a fumar.</string>
+    <string name="C0200">morirà pel tret d\'un agent del govern, encarregat d\'exterminar races alienígenes que habiten al planeta terra.</string>
+    <string name="C0201">morirà per una terrible reacció al·lèrgica causada pel licor de plàtan.</string>
+    <string name="C0210">morirà al confondre julivert per tabac picat.</string>
+    <string name="sinNombre">No es pot calcular la mort d\'un sense nom.</string>
+    <string name="resource_not_found">Error intern. Recurs no trobat.</string>
 
 </resources>
