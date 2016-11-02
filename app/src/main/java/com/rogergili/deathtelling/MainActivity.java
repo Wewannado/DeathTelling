@@ -37,16 +37,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private int selectedKlingon = 0;
     private int anys = 0;
     private String nom = "";
-
-    private String orientacio;
+    private EditText eTnom;
+    private EditText eTedad;
+    private Spinner sexo;
+    private Spinner bebes;
+    private RadioButton botoRadioButtonNo;
+    private RadioButton botoRadioButtonSi;
+    private Button calcula;
+    private CheckBox checkKlingon;
+    private TextView textKlingon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        WindowManager windowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
-        Display display = windowManager.getDefaultDisplay();
         //Si hi ha una instancia guardada en recuperem les variables.
         if (savedInstanceState != null) {
             this.selectedSpinnerSexo = savedInstanceState.getInt("sexo");
@@ -54,36 +58,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             this.selectedRadioButton = savedInstanceState.getInt("fumas");
             this.anys = savedInstanceState.getInt("edad");
             this.nom = savedInstanceState.getString("nom");
-            this.selectedKlingon= savedInstanceState.getInt("klingon");
+            this.selectedKlingon = savedInstanceState.getInt("klingon");
         } else {
             //Missatge per invitar a trobar un dels ous de pasqua del programa ;)
             Toast.makeText(this, R.string.aliens, Toast.LENGTH_SHORT).show();
         }
-        //Carreguem el metode cargaPantalla en vertical o horitzontal depenen de la orientacio de la pantalla.
-        if (display.getRotation() == Surface.ROTATION_0 || display.getRotation() == Surface.ROTATION_180) {
-            this.orientacio = "vertical";
-            cargaPantalla(orientacio);
-        } else {
-            this.orientacio = "horitzontal";
-            cargaPantalla(orientacio);
-        }
-
+        cargaPantalla();
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        //Introduim les dades que volem guardar en cas que es giri la pantalla.
-        EditText eTedad;
-        EditText eTnom;
-        if (orientacio == "horitzontal") {
-            eTedad = (EditText) findViewById(R.id.eTextEdadH);
-            eTnom = (EditText) findViewById(R.id.eTextNombreH);
-        } else {
-            eTedad = (EditText) findViewById(R.id.eTextEdadV);
-            eTnom = (EditText) findViewById(R.id.eTextNombreV);
-        }
-
         outState.putInt("klingon", this.selectedKlingon);
         outState.putInt("sexo", this.selectedSpinnerSexo);
         outState.putInt("bebes", this.selectedSpinnerBebes);
@@ -96,17 +81,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
     }
 
-    public void cargaPantalla(String orientacio) {
-        Spinner sexo;
-        Spinner bebes;
-        RadioButton botoRadioButtonNo;
-        RadioButton botoRadioButtonSi;
-        Button calcula;
-        EditText eTedad;
-        EditText eTnom;
+    public void cargaPantalla() {
+        WindowManager windowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+        Display display = windowManager.getDefaultDisplay();
 
         //inicialitzem els identificadors de recursos adecuats a la orientacio de la pantalla.
-        if (orientacio == "vertical") {
+        if (display.getRotation() == Surface.ROTATION_0 || display.getRotation() == Surface.ROTATION_180) {
             sexo = (Spinner) findViewById(R.id.spinnerSexoV);
             bebes = (Spinner) findViewById(R.id.spinnerBebesV);
             botoRadioButtonNo = (RadioButton) findViewById(R.id.radioButtonNV);
@@ -114,6 +94,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             calcula = (Button) findViewById(R.id.calculaV);
             eTedad = (EditText) findViewById(R.id.eTextEdadV);
             eTnom = (EditText) findViewById(R.id.eTextNombreV);
+            textKlingon = (TextView) findViewById(R.id.tViewKlingonV);
+            checkKlingon = (CheckBox) findViewById(R.id.checkBoxKlingonV);
         } else {
             sexo = (Spinner) findViewById(R.id.spinnerSexoH);
             bebes = (Spinner) findViewById(R.id.spinnerBebesH);
@@ -122,12 +104,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             calcula = (Button) findViewById(R.id.calculaH);
             eTedad = (EditText) findViewById(R.id.eTextEdadH);
             eTnom = (EditText) findViewById(R.id.eTextNombreH);
+            textKlingon = (TextView) findViewById(R.id.tViewKlingonH);
+            checkKlingon = (CheckBox) findViewById(R.id.checkBoxKlingonH);
         }
+
 
         //Creem els listeners als dos Spinners i al boto de calcular.
         sexo.setOnItemSelectedListener(this);
         bebes.setOnItemSelectedListener(this);
         calcula.setOnClickListener(this);
+        checkKlingon.setOnClickListener(this);
 
         //Creem un adaptador per als Spinners.
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.yesNo, R.layout.spinner_right);
@@ -145,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         if (selectedSpinnerSexo == 2) {
             //Un petit ou de pasqua que nomes entendran els fans d'Star Trek ;)
-            showKlingon(orientacio, true);
+            showKlingon(true);
             sexo.setSelection(selectedSpinnerSexo);
         }
         //Seleccionem la posicio adequada al spinner de beguda
@@ -158,19 +144,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             botoRadioButtonNo.setChecked(false);
             botoRadioButtonSi.setChecked(true);
         }
-        CheckBox checkKlingon;
-        if (orientacio == "horitzontal") {
-            checkKlingon = (CheckBox) findViewById(R.id.checkBoxKlingonH);
-        } else {
-            checkKlingon = (CheckBox) findViewById(R.id.checkBoxKlingonV);
-        }
-        //Afegim un listener al chekcbox.
-        checkKlingon.setOnClickListener(this);
 
         //Marquem la checkbox del llenguatge klingon en cas que sigui necesari
         if (selectedKlingon == 1) {
             checkKlingon.setChecked(true);
-        }else{
+        } else {
             checkKlingon.setChecked(false);
         }
 
@@ -183,17 +161,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-
-    public void showKlingon(String orientacio, boolean Mostrar) {
-        TextView textKlingon;
-        CheckBox checkKlingon;
-        if (orientacio == "vertical") {
-            textKlingon = (TextView) findViewById(R.id.tViewKlingonV);
-            checkKlingon = (CheckBox) findViewById(R.id.checkBoxKlingonV);
-        } else {
-            textKlingon = (TextView) findViewById(R.id.tViewKlingonH);
-            checkKlingon = (CheckBox) findViewById(R.id.checkBoxKlingonH);
-        }
+    public void showKlingon(boolean Mostrar) {
         if (Mostrar) {
             textKlingon.setVisibility(View.VISIBLE);
             checkKlingon.setVisibility(View.VISIBLE);
@@ -201,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             textKlingon.setVisibility(View.INVISIBLE);
             checkKlingon.setChecked(false);
             checkKlingon.setVisibility(View.INVISIBLE);
-            selectedKlingon= 0;
+            selectedKlingon = 0;
         }
     }
 
@@ -237,25 +205,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         switch (parent.getId()) {
             case R.id.spinnerSexoH:
+            case R.id.spinnerSexoV:
                 this.selectedSpinnerSexo = position;
                 //la opcio 2 activa el checkbox ocult Klingon
                 if (position == 2) {
-                    showKlingon("horizontal", true);
+                    showKlingon(true);
                 } else {
-                    showKlingon("horizontal", false);
-                }
-                break;
-            case R.id.spinnerSexoV:
-                this.selectedSpinnerSexo = position;
-                if (position == 2) {
-                    showKlingon("vertical", true);
-                } else {
-                    showKlingon("vertical", false);
+                    showKlingon(false);
                 }
                 break;
             case R.id.spinnerBebesH:
-                this.selectedSpinnerBebes = position;
-                break;
             case R.id.spinnerBebesV:
                 this.selectedSpinnerBebes = position;
                 break;
@@ -270,15 +229,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onClick(View view) {
         if ((view.getId() == R.id.calculaH) || (view.getId() == R.id.calculaV)) {
-            EditText eTedad;
-            EditText eTnom;
-            if (orientacio == "horitzontal") {
-                eTedad = (EditText) findViewById(R.id.eTextEdadH);
-                eTnom = (EditText) findViewById(R.id.eTextNombreH);
-            } else {
-                eTedad = (EditText) findViewById(R.id.eTextEdadV);
-                eTnom = (EditText) findViewById(R.id.eTextNombreV);
-            }
             if (eTnom.getText().toString().equals("")) {
                 Toast.makeText(this, R.string.sinNombre, Toast.LENGTH_SHORT).show();
             } else {
@@ -294,13 +244,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
 
         if ((view.getId() == R.id.checkBoxKlingonH) || (view.getId() == R.id.checkBoxKlingonV)) {
-            CheckBox klingon;
-            if (orientacio == "horitzontal") {
-                klingon = (CheckBox) findViewById(R.id.checkBoxKlingonH);
-            } else {
-                klingon = (CheckBox) findViewById(R.id.checkBoxKlingonV);
-            }
-            if (klingon.isChecked()) {
+            if (checkKlingon.isChecked()) {
                 this.selectedKlingon = 1;
             } else {
                 this.selectedKlingon = 0;

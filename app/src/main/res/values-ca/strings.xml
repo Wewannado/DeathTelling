@@ -35,18 +35,18 @@
         <item>Altre</item>
     </string-array>
     <string name="aliens">Els aliens no existeixen.... ¿no?</string>
-    <string name="C0211">morirà al seu llit, embriagat, amb una cigarreta a la boca i un somriure d\'orella a orella.</string>
-    <string name="C0000">morirà sol en la única habitació de l\'apartament que tenia llogat</string>
-    <string name="C0001">morirà després d\'una llarga agonia degut a la cirrosis desenvolupada per l\'excés d\'alcohol.</string>
+    <string name="C0000">morirà després d\'una llarga agonia degut a la cirrosis desenvolupada per l\'excés d\'alcohol.</string>
+    <string name="C0001">morirà sol en la única habitació de l\'apartament que tenia llogat</string>
     <string name="C0010">morirà en una explosió causada al encendre una cigarreta, després de deixar un fogó de la cuina mal tancat.</string>
     <string name="C0011">morirà de vell, amb la sorpresa de tots els seus coneguts.</string>
-    <string name="C0100">morirà assassinada per un atracador, mentres tornava del treball.</string>
-    <string name="C0101">morirà després d\'intentar aconseguir un nou record olímpic, consistent en beure 10 litres de cervesa en 5 minuts.</string>
-    <string name="C0110">morirà de càncer de pulmó. No podràs dir que el metge no t\'ho havia advertit.</string>
-    <string name="C0111">morirà al caure del balcó del seu apartament, en el que havia sortit a fumar.</string>
-    <string name="C0200">morirà pel tret d\'un agent del govern, encarregat d\'exterminar races alienígenes que habiten al planeta terra.</string>
-    <string name="C0201">morirà per una terrible reacció al·lèrgica causada pel licor de plàtan.</string>
-    <string name="C0210">morirà al confondre julivert per tabac picat.</string>
+    <string name="C0100">morirà després d\'intentar aconseguir un nou record olímpic, consistent en beure 10 litres de cervesa en 5 minuts.</string>
+    <string name="C0101">morirà assassinada per un atracador, mentres tornava del treball.</string>
+    <string name="C0110">morirà al caure del balcó del seu apartament, en el que havia sortit a fumar.</string>
+    <string name="C0111">morirà de càncer de pulmó. No podràs dir que el metge no t\'ho havia advertit.</string>
+    <string name="C0200">morirà per una terrible reacció al·lèrgica causada pel licor de plàtan.</string>
+    <string name="C0201">morirà pel tret d\'un agent del govern, encarregat d\'exterminar races alienígenes que habiten al planeta terra.</string>
+    <string name="C0210">morirà al seu llit, embriagat, amb una cigarreta a la boca i un somriure d\'orella a orella.</string>
+    <string name="C0211">morirà al confondre julivert per tabac picat.</string>
     <string name="sinNombre">No es pot calcular la mort d\'un sense nom.</string>
     <string name="resource_not_found">Error intern. Recurs no trobat.</string>
 

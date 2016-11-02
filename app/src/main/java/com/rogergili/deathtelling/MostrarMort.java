@@ -11,10 +11,14 @@
 
 package com.rogergili.deathtelling;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Display;
+import android.view.Surface;
+import android.view.WindowManager;
 import android.widget.TextView;
 import com.rogergili.deathtelling.Model.calculadoraMuerte;
 
@@ -32,7 +36,8 @@ public class MostrarMort extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mostrarmort);
-
+        WindowManager windowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+        Display display = windowManager.getDefaultDisplay();
 
         //Si no existeix una instancia guardada, significa que acabem d'accedir a l'activity.
         //Carreguem, per tant, les variables pasades en l'intent.
@@ -61,15 +66,20 @@ public class MostrarMort extends AppCompatActivity {
             this.nombre= savedInstanceState.getString("nom");
             this.klingon= savedInstanceState.getInt("klingon");
         }
-        //ambdues layouts tenen els mateixos elements amb els mateixos id.
-        TextView txViewMuerte = (TextView) findViewById(R.id.textVResultadoMuerteV);
-        TextView txViewNom = (TextView) findViewById(R.id.textVNombreResMuerteV);
+        TextView txViewMuerte;
+        TextView txViewNom;
+        if (display.getRotation() == Surface.ROTATION_0 || display.getRotation() == Surface.ROTATION_180) {
+           txViewMuerte = (TextView) findViewById(R.id.textVResultadoMuerteV);
+           txViewNom = (TextView) findViewById(R.id.textVNombreResMuerteV);
+        } else {
+            txViewMuerte = (TextView) findViewById(R.id.textVResultadoMuerteH);
+            txViewNom = (TextView) findViewById(R.id.textVNombreResMuerteH);
+        }
 
         //Instanciem un nou objecte de la clase calculadora, y obtenim l'id de recurs asociat a la causa de la mort (String muerteID)
         calculadoraMuerte calculadora = new calculadoraMuerte(klingon,genero,fumas,bebes);
         String muerteID = calculadora.getMuerte();
 
-        //TODO No estic segur que obtindre un recurs d'String en temps d'execucio sigui una bona praxis de programació.
         //Mitjançant l'ID obtinguda, recuperem el resourceStringId que correspon a la causa de la mort.
         int resourceStringId = getApplicationContext().getResources().getIdentifier(muerteID, "string", "com.rogergili.deathtelling");
 
@@ -86,11 +96,11 @@ public class MostrarMort extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
+        outState.putString("nom", this.nombre);
+        outState.putInt("edad", this.edad);
         outState.putInt("sexo", this.genero);
         outState.putInt("bebes", this.bebes);
         outState.putInt("fumas", this.fumas);
-        outState.putString("nom", this.nombre);
-        outState.putInt("edad", this.edad);
         outState.putInt("klingon", this.klingon);
 
     }

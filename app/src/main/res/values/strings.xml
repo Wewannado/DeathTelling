@@ -48,23 +48,23 @@ The above showns a total posible results of
 -->
 
     //Hombres
-    <string name="C0000">morirá solo en la única habitación del apartamento que tenia alquilado.</string>
-    <string name="C0001">morirá después de una larga agonía debido a la cirrosis desarrollada por beber en exceso.</string>
+    <string name="C0000">morirá después de una larga agonía debido a la cirrosis desarrollada por beber en exceso.</string>
+    <string name="C0001">morirá solo en la única habitación del apartamento que tenia alquilado.</string>
     <string name="C0010">morirá por la explosión causada al encender un cigarrillo, tras dejarse mal apagado un fogón de la cocina.</string>
     <string name="C0011">morirá de viejo, para asombro de todos sus conocidos.</string>
 
     //Mujeres
-    <string name="C0100">morirá asesinada por un atracador, mientras volvía del trabajo.</string>
-    <string name="C0101">morirá después de intentar conseguir un nuevo récord olímpico, de beber 10 litros de cerveza en 5 minutos.</string>
-    <string name="C0110">morirá de cáncer de pulmón. No dirás que el medico no te lo advirtió.</string>
-    <string name="C0111">morirá al caer por el balcón de su apartamento, al que había salido para fumar.</string>
+    <string name="C0100">morirá después de intentar conseguir un nuevo récord olímpico, de beber 10 litros de cerveza en 5 minutos.</string>
+    <string name="C0101">morirá asesinada por un atracador, mientras volvía del trabajo.</string>
+    <string name="C0110">morirá al caer por el balcón de su apartamento, al que había salido para fumar.</string>
+    <string name="C0111">morirá de cáncer de pulmón. No dirás que el medico no te lo advirtió.</string>
 
 
     //Otros
-    <string name="C0200">morirá del disparo de un agente del gobierno, encargado de exterminar razas alienígenas de la faz de la tierra.</string>
-    <string name="C0201">morirá tras una terrible reacción alérgica causada por el licor de plátano.</string>
-    <string name="C0210">morirá al confundir perejil con tabaco de liar.</string>
-    <string name="C0211">morirá en su cama, borracho, con un cigarrillo en la boca y una sonrisa de oreja a oreja.</string>
+    <string name="C0200">morirá tras una terrible reacción alérgica causada por el licor de plátano.</string>
+    <string name="C0201">morirá del disparo de un agente del gobierno, encargado de exterminar razas alienígenas de la faz de la tierra.</string>
+    <string name="C0210">morirá en su cama, borracho, con un cigarrillo en la boca y una sonrisa de oreja a oreja.</string>
+    <string name="C0211">morirá al confundir perejil con tabaco de liar.</string>
 
     //Estas muertes están escritas en Klingoniano, no deben de ser traducidas.
     //Traducciones cortesía de http://tradukka.com/translate/en/tlh?hl=ca
